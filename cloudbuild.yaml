@@ -4,9 +4,9 @@ steps:
   name: 'docker/compose'
   args: ['-f', 'docker-compose.yaml', 'up', '-d']
 
-# - id: "Rodando composer"
-#   name: 'docker'
-#   args: ['exec', '-t', 'app', 'composer', 'install']
+- id: "Rodando composer"
+  name: 'docker'
+  args: ['exec', '-t', 'app', 'composer', 'install']
 
 # - id: "Copiando .env"
 #   name: 'docker'
