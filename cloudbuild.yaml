@@ -8,22 +8,22 @@ steps:
   name: 'docker'
   args: ['exec', '-t', 'micro-videos-app', 'composer', 'install']
 
-# - id: "Copiando .env"
-#   name: 'docker'
-#   args: ['exec', '-t', 'micro-videos-app', 'cp', '.env.example', '.env']
+- id: "Copiando .env"
+  name: 'docker'
+  args: ['exec', '-t', 'micro-videos-app', 'cp', '.env.example', '.env']
 
-# - id: "Copiando .env.testing"
-#   name: 'docker'
-#   args: ['exec', '-t', 'micro-videos-app', 'cp', '.env.example.testing', '.env.testing']
+- id: "Copiando .env.testing"
+  name: 'docker'
+  args: ['exec', '-t', 'micro-videos-app', 'cp', '.env.example.testing', '.env.testing']
 
-# - id: "Rodando key generate"
-#   name: 'docker'
-#   args: ['exec', '-t', 'micro-videos-app', 'php', 'artisan', 'key:generate']
+- id: "Rodando key generate"
+  name: 'docker'
+  args: ['exec', '-t', 'micro-videos-app', 'php', 'artisan', 'key:generate']
 
-# - id: "Rodando migrações"
-#   name: 'docker'
-#   args: ['exec', '-t', 'micro-videos-app', 'php', 'artisan', 'migrate']
+- id: "Rodando migrações"
+  name: 'docker'
+  args: ['exec', '-t', 'micro-videos-app', 'php', 'artisan', 'migrate']
 
-# - id: "Rodando phpunit"
-#   name: 'docker'
-#   args: ['exec', '-t', 'micro-videos-app', 'php', '/var/www/vendor/bin/phpunit', '-c', '/var/www/phpunit.xml']
+- id: "Rodando phpunit"
+  name: 'docker'
+  args: ['exec', '-t', 'micro-videos-app', 'php', '/var/www/vendor/bin/phpunit', '-c', '/var/www/phpunit.xml']
