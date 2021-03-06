@@ -2,7 +2,7 @@ steps:
 
 - id: "Rodando docker-compose"
   name: 'docker/compose'
-  args: ['-f', 'docker-compose.yaml', 'up', '-d']
+  args: ['-f', 'docker-compose.prod.yaml', 'up', '-d']
 
 - id: "Rodando composer"
   name: 'docker'
