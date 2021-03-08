@@ -9,25 +9,25 @@ steps:
   args: ['exec','-u','root','-t','micro-videos-app','chown','-R','www-data:www-data','/var/www']
 
 - id: "Rodando composer"
-  name: 'docker'
+  name: 'gcr.io/cloud-builders/docker'
   args: ['exec', '-t', 'micro-videos-app', 'composer', 'install']
 
 - id: "Copiando .env"
-  name: 'docker'
+  name: 'gcr.io/cloud-builders/docker'
   args: ['exec', '-t', 'micro-videos-app', 'cp', '.env.example', '.env']
 
 - id: "Copiando .env.testing"
-  name: 'docker'
+  name: 'gcr.io/cloud-builders/docker'
   args: ['exec', '-t', 'micro-videos-app', 'cp', '.env.example.testing', '.env.testing']
 
 - id: "Rodando key generate"
-  name: 'docker'
+  name: 'gcr.io/cloud-builders/docker'
   args: ['exec', '-t', 'micro-videos-app', 'php', 'artisan', 'key:generate']
 
 - id: "Rodando migrações"
-  name: 'docker'
+  name: 'gcr.io/cloud-builders/docker'
   args: ['exec', '-t', 'micro-videos-app', 'php', 'artisan', 'migrate']
 
 - id: "Rodando phpunit"
-  name: 'docker'
+  name: 'gcr.io/cloud-builders/docker'
   args: ['exec', '-t', 'micro-videos-app', 'php', '/var/www/vendor/bin/phpunit', '-c', '/var/www/phpunit.xml']
